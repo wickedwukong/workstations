@@ -77,41 +77,6 @@ sudo xattr -r -d com.apple.quarantine /Applications/Spotify.app
 # Reset Quicklook server
 qlmanage -r
 
-# Install asdf plugins
-function ensure-asdf-plugin() {
-  local name="$1"
-  local repo="$2"
-
-  if ! asdf plugin list | grep -q "$name"; then
-    asdf plugin add "$name" "$repo"
-  fi
-}
-
-ensure-asdf-plugin "babashka" "https://github.com/pitch-io/asdf-babashka"
-ensure-asdf-plugin "cmake" "https://github.com/asdf-community/asdf-cmake.git"
-ensure-asdf-plugin "cocoapods" "https://github.com/ronnnnn/asdf-cocoapods.git"
-ensure-asdf-plugin "conan" "https://github.com/amrox/asdf-pyapp.git"
-ensure-asdf-plugin "dart" "https://github.com/patoconnor43/asdf-dart.git"
-ensure-asdf-plugin "firebase" "https://github.com/jthegedus/asdf-firebase.git"
-ensure-asdf-plugin "flutter" "https://github.com/asdf-community/asdf-flutter.git"
-ensure-asdf-plugin "golang" "https://github.com/asdf-community/asdf-golang.git"
-ensure-asdf-plugin "haskell" "https://github.com/vic/asdf-haskell.git"
-ensure-asdf-plugin "java" "https://github.com/halcyon/asdf-java.git"
-ensure-asdf-plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
-ensure-asdf-plugin "php" "https://github.com/asdf-community/asdf-php.git"
-ensure-asdf-plugin "pipenv" "https://github.com/and-semakin/asdf-pipenv.git"
-ensure-asdf-plugin "pkl" "https://github.com/mise-plugins/asdf-pkl.git"
-ensure-asdf-plugin "poetry" "https://github.com/asdf-community/asdf-poetry.git"
-ensure-asdf-plugin "python" "https://github.com/asdf-community/asdf-python.git"
-ensure-asdf-plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
-ensure-asdf-plugin "terraform" "https://github.com/asdf-community/asdf-hashicorp.git"
-ensure-asdf-plugin "tflint" "https://github.com/skyzyx/asdf-tflint.git"
-ensure-asdf-plugin "tfsec" "https://github.com/woneill/asdf-tfsec.git"
-
-# ZSH Go integration requires at least one asdf managed version of Go
-asdf install golang 1.22.0
-asdf set -u golang 1.22.0
-
 # Install oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh/" ]; then
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
