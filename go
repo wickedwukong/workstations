@@ -62,7 +62,7 @@ mkdir -p ~/.docker/cli-plugins
 cp ./dotfiles/.docker/config.json ~/.docker/config.json
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-buildx/bin/docker-buildx" ~/.docker/cli-plugins/docker-buildx
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ~/.docker/cli-plugins/docker-compose
-if ! brew services list | grep started | grep colima; then
+if ! brew services list | grep colima; then
   brew services start colima
 fi
 
@@ -110,6 +110,10 @@ cp -R ./dotfiles/.zshrc.d/common/* ~/.zshrc.d/
 # Setup specific personal zsh configuration
 mkdir -p ~/.zshrc.d
 cp -R dotfiles/.zshrc.d/personal/* ~/.zshrc.d/
+
+# Setup ebury zsh configuration
+mkdir -p ~/.zshrc.d
+cp -R dotfiles/.zshrc.d/ebury/* ~/.zshrc.d/
 
 mkdir -p ~/.zsh-completions
 

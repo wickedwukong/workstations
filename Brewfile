@@ -44,6 +44,7 @@ brew "handbrake"
 brew "highlight"
 brew "icu4c"
 brew "imap-uw"
+brew "jira-cli"
 brew "jj"
 brew "jq"
 brew "kcat"
@@ -123,7 +124,6 @@ cask "aws-vault-binary"
 cask "bruno"
 cask "chatgpt"
 cask "claude"
-cask "claude-code"
 cask "cursor"
 cask "dash"
 cask "discord"
@@ -179,6 +179,7 @@ cask "rectangle"
 cask "signal"
 cask "slack"
 cask "spotify"
+cask "stats"
 cask "steam"
 cask "telegram"
 cask "tunnelblick"
@@ -193,7 +194,6 @@ cask "zoom"
 mas "Clockify Desktop", id: 1364502317
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
-mas "iStat Menus", id: 6499559693
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Microsoft Excel", id: 462058435

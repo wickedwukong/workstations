@@ -18,3 +18,39 @@ program = "/Users/tobyclemson/Applications/RustRover.app/Contents/MacOS/rustrove
 diff-args = ["diff",  "$left", "$right"]
 edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
+
+[user]
+name = "Toby Clemson"
+email = "tobyclemson@gmail.com"
+
+[[--scope]]
+--when.repositories = ["~/Code/organisations/ebury/"]
+[--scope.user]
+email = "toby.clemson@ebury.com"
+
+[remotes.origin]
+auto-track-bookmarks = "*"
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
+tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+fresh = ["util", "exec", "--", "sh", "-c", "jj git fetch && jj new 'trunk()'"]
+sync = ["util", "exec", "--", "sh", "-c", "jj git fetch && jj rebase -b @ -d 'trunk()'"]
+mine = ["bookmark", "list", "-r", "mine()"]
+restack = ["rebase", "--onto", "trunk()", "--source", "roots(trunk()..) & mutable()", "--simplify-parents"]
+ship = ["git", "push", "-r", "descendants(trunk()) & bookmarks()"]
+
+[revset-aliases]
+'closest_pushable(to)' = '''
+  heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))
+'''
+
+'stack()'    = 'stack(@)'
+'stack(x)'   = 'stack(x, 2)'
+'stack(x,n)' = 'ancestors(reachable(x, mutable()), n)'
+
+'closest_merge(to)' = 'heads(::to & merges())'
+
+'wip' = 'mine() & mutable() & ~empty()'
+
+'recent()' = 'committer_date(after:"1 month ago")'

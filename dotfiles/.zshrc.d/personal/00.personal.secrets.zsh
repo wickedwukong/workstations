@@ -2,7 +2,7 @@ github-token () {
   local org_name="$1"
   local github_item_uuid="qz2fjat3dzdbnpurz4nmcxwbea"
 
-  op item get "${github_item_uuid}" --fields "${org_name}"
+  op item get "${github_item_uuid}" --fields "${org_name}" --reveal
 }
 
 export-github-token () {
