@@ -14,8 +14,8 @@ WORKSTATIONS_RUN_SOFTWARE_UPDATE=${WORKSTATIONS_RUN_SOFTWARE_UPDATE:-yes}
 WORKSTATIONS_CONFIGURE_SYSTEM=${WORKSTATIONS_CONFIGURE_SYSTEM:-yes}
 WORKSTATIONS_CONFIGURE_APPS=${WORKSTATIONS_CONFIGURE_APPS:-yes}
 
-WORKSTATIONS_USER_NAME=${WORKSTATIONS_USER_NAME:-"Toby Clemson"}
-WORKSTATIONS_USER_EMAIL=${WORKSTATIONS_USER_EMAIL:-tobyclemson@gmail.com}
+WORKSTATIONS_USER_NAME=${WORKSTATIONS_USER_NAME:-"Xuemin Guan"}
+WORKSTATIONS_USER_EMAIL=${WORKSTATIONS_USER_EMAIL:-gxuemin@gmail.com}
 
 uname_machine="$(/usr/bin/uname -m)"
 preference_files=()
@@ -68,11 +68,6 @@ fi
 
 # Clean up
 brew cleanup
-
-# Un-quarantine casks
-# sudo xattr -r -d com.apple.quarantine /Applications/Emacs.app
-sudo xattr -r -d com.apple.quarantine /Applications/QLMarkdown.app
-sudo xattr -r -d com.apple.quarantine /Applications/Spotify.app
 
 # Reset Quicklook server
 qlmanage -r
@@ -160,10 +155,7 @@ if [[ $(git config --global --get user.email) != *"$WORKSTATIONS_USER_EMAIL"* ]]
 fi
 
 # Add loginitems
-ensure-loginitem "Dropbox" "/Applications/Dropbox.app"
-ensure-loginitem "Karabiner-Elements" "/Applications/Karabiner-Elements.app"
-ensure-loginitem "Alfred 4" "/Applications/Alfred 4.app"
-ensure-loginitem "1Password 7" "/Applications/1Password 7.app"
+ensure-loginitem "Espanso" "/Applications/Espanso.app"
 
 # Add tool specific config files
 cp -R ./dotfiles/.config ~
@@ -287,12 +279,6 @@ if [[ "$WORKSTATIONS_CONFIGURE_APPS" != "no" ]]; then
   add_application_preferences "screenshot"
   add_application_preferences "terminal"
   add_application_preferences "textedit" "TextEdit"
-
-  # Add 3rd party application preferences
-  add_application_preferences "adobe"
-  add_application_preferences "dropbox" "Dropbox"
-  add_application_preferences "google-chrome" "Google Chrome"
-  add_application_preferences "iterm2"
 
   # Source all preference scripts
   list_open_affected_applications

@@ -56,9 +56,9 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 export PATH="$HOME/bin:$PATH"
 
 export MANPATH="/usr/local/man:$MANPATH"
-export EDITOR='vim'
+export EDITOR='nvim'
 
-export AUTHORS="@tobyclemson"
+export AUTHORS="@wickedwukong"
 
 export CLOUDSDK_HOME="$HOMEBREW_PREFIX/share/google-cloud-sdk/"
 

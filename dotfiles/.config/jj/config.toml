@@ -1,32 +1,18 @@
 [merge-tools.idea]
-program = "/Users/tobyclemson/Applications/IntelliJ IDEA.app/Contents/MacOS/idea"
-
-diff-args = ["diff",  "$left", "$right"]
-edit-args = ["diff",  "$left", "$right"]
-merge-args = ["merge" , "$left", "$right", "$base", "$output"]
-
-[merge-tools.pycharm]
-program = "/Users/tobyclemson/Applications/PyCharm.app/Contents/MacOS/pycharm"
-
-diff-args = ["diff",  "$left", "$right"]
-edit-args = ["diff",  "$left", "$right"]
-merge-args = ["merge" , "$left", "$right", "$base", "$output"]
-
-[merge-tools.rustrover]
-program = "/Users/tobyclemson/Applications/RustRover.app/Contents/MacOS/rustrover"
+program = "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea"
 
 diff-args = ["diff",  "$left", "$right"]
 edit-args = ["diff",  "$left", "$right"]
 merge-args = ["merge" , "$left", "$right", "$base", "$output"]
 
 [user]
-name = "Toby Clemson"
-email = "tobyclemson@gmail.com"
+name = "Xuemin Guan"
+email = "gxuemin@gmail.com"
 
 [[--scope]]
---when.repositories = ["~/Code/organisations/ebury/"]
+--when.repositories = ["~/development/ebury/"]
 [--scope.user]
-email = "toby.clemson@ebury.com"
+email = "xuemin.guan.external@ebury.com"
 
 [remotes.origin]
 auto-track-bookmarks = "*"
